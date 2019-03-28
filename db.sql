@@ -33,9 +33,15 @@ insert into język(id, nazwa, kod_iso) values (1, 'Polski', 'PL');
 insert into język(id, nazwa, kod_iso) values (2, 'Francuski', 'FR');
 insert into język(id, nazwa, kod_iso) values (3, 'Angielski', 'EN');
 
+SELECT pg_catalog.setval('public."język_id_seq"', 3, true);
+
+
 insert into określenie(nazwa, definicja, język) values('język', 'Język, jakim mówimy', 1);
 insert into określenie(nazwa, definicja, język) values('langue', 'La langue que nous parlons', 2);
 insert into określenie(nazwa, definicja, język) values('language', 'Language we speak', 3);
+
+SELECT pg_catalog.setval('public."określenie_id_seq"', 3, true);
+
 
 insert into tłumaczenie(źródło, cel) values (1, 2);
 insert into tłumaczenie(źródło, cel) values (1, 3);
@@ -43,6 +49,9 @@ insert into tłumaczenie(źródło, cel) values (2, 3);
 insert into tłumaczenie(źródło, cel) values (2, 1);
 insert into tłumaczenie(źródło, cel) values (3, 1);
 insert into tłumaczenie(źródło, cel) values (3, 2);
+
+SELECT pg_catalog.setval('public."tłumaczenie_id_seq"', 6, true);
+
 
 
 DROP FUNCTION tłumacz(character varying, character varying);
