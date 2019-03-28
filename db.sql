@@ -45,7 +45,7 @@ insert into tłumaczenie(źródło, cel) values (3, 1);
 insert into tłumaczenie(źródło, cel) values (3, 2);
 
 
-DROP FUNCTION tłumacz(character varying,character varying);
+DROP FUNCTION tłumacz(character varying, character varying);
 CREATE or REPLACE FUNCTION tłumacz(term varchar, lang  varchar)
  RETURNS TABLE (
   pojęcie varchar,
@@ -81,3 +81,9 @@ RETURN QUERY
 
 END ; $func$
 LANGUAGE PLPGSQL;
+
+/*
+usage:
+
+psql -dglossary < db.sql
+*/
